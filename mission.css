@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #f7f7f7 !important;
+}
+.main_nav {
+  width: calc(100vh-72px);
+  position: fixed;
+  z-index: 10;
+  transform: rotate(270deg);
+  transform-origin: right bottom;
+  top: 0;
+  right: 0;
+}
+.main_nav_inner {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.main_nav_inner li a {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: block;
+  margin-top: 0px;
+  line-height: 46px;
+  padding: 0 1vh;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  display: inline-block;
+  transition: 0.5s;
+}
+.ex-tb {
+  background-color: #f7f7f7;
+  background-size: 100% 200%;
+  background-image: linear-gradient(
+    to bottom,
+    #f7f7f7 50%,
+    rgb(165, 165, 165) 50%
+  );
+  transition: background-position 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.ex-tb:hover,
+.ex-tb:focus {
+  background-position: 0 100%;
+  color: rgb(0, 0, 0);
+}
+.active {
+  background-color: rgb(165, 165, 165);
+}
+.main_nav_inner li.active a:before,
+.main_nav_inner a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(185, 185, 185);
+  top: 100%;
+  left: 0;
+  z-index: -1;
+  transition: top 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@media (max-width: 980px) {
+  .main_nav {
+    display: none;
+  }
+}
+/* ***********************    Burger Icon ********************** */
+#main_nav img {
+  width: 180px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.burger-icon {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  top: 0px;
+  right: 60px;
+  font-size: 40px;
+  margin-left: 50px;
+  z-index: 1600;
+  cursor: pointer;
+}
+.burger-icon .line:nth-of-type(1) {
+  top: 2px;
+}
+.burger-icon .line {
+  background-color: #000;
+  width: 36px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: 0.2s ease;
+}
+.burger-icon .line:nth-of-type(2) {
+  top: 14px;
+}
+.burger-icon .line:nth-of-type(3) {
+  top: 26px;
+}
+
+.burger-icon:hover .line:nth-of-type(1) {
+  top: 1px;
+}
+.burger-icon:hover .line:nth-of-type(3) {
+  top: 27px;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1700; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: rgb(255, 255, 255); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav li {
+  list-style: none;
+  margin-left: 50px;
+  border-bottom: 1px solid rgb(58, 57, 57);
+  width: 800px;
+}
+@media (max-width: 1100px) {
+  .sidenav li {
+    width: 600px;
+  }
+}
+@media (max-width: 900px) {
+  .sidenav li {
+    width: 500px;
+  }
+}
+@media (max-width: 800px) {
+  .sidenav li {
+    width: 400px;
+  }
+}
+@media (max-width: 700px) {
+  .sidenav li {
+    width: 300px;
+  }
+}
+@media (max-width: 600px) {
+  .sidenav li {
+    width: 250px;
+    margin-left: 5px;
+  }
+}
+@media (max-width: 420px) {
+  .burger-icon {
+    right: 20px;
+  }
+  #main_nav img {
+    width: 140px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 0px;
+  text-decoration: none;
+  font-size: 50px;
+  line-height: 3rem;
+  /* border-bottom: 1px solid black; */
+  color: black;
+  display: block;
+  transition: 0.4s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  zoom: normal;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  font-size: 50px;
+  margin-left: 50px;
+  border-bottom: 0px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 50px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 10px;
+  }
+}
+.social_icons {
+  position: absolute;
+  top: 40%;
+  right: 2%;
+}
+.sidenav a:hover {
+  background: linear-gradient(
+    135deg,
+    #ff4283 0%,
+    rgb(0, 164, 188) 33%,
+    #ff4283 50%,
+    rgb(0, 164, 188) 67%,
+    rgb(240, 12, 126) 100%
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 30s linear infinite;
+}
+@keyframes animate {
+  100% {
+    background-position: 400%;
+  }
+}
+
+.mission_detail {
+  position: relative;
+  margin: auto;
+  border: 1px solid black;
+  width: 92%;
+}
+/* ***************   Mission ******************* */
+
+.mission a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.mission h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4.158rem;
+  line-height: 4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -2px;
+}
+
+.img_title {
+  padding-left: 55px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media (max-width: 1100px) {
+  .mission h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+@media (max-width: 790px) {
+  .mission h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}
+@media (max-width: 770px) {
+  .mission_detail{
+    width: 87%;
+  }
+  .img_title { 
+    padding-right: 20px; 
+    margin-top: 20px;
+  }
+}
+@media (max-width: 630px) {
+  .mission h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+@media (max-width: 530px) {
+  .mission h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .img_title {
+    padding-left: 15px;
+    font-size: 10px;
+    padding-top: 10px;
+    padding-right: 15px;
+    font-weight: bold;
+  }
+  .mission_detail{
+    width: 92%;
+  }
+}
+
+
+/* **************** footer     ************* */
+.footer {
+  background-color: #000;
+  position: relative;
+  z-index: 3000;
+}
+.footer img {
+  width: 180px;
+}
+.footer h3 {
+  color: rgb(171, 171, 171);
+}
+.footer p {
+  color: rgb(171, 171, 171);
+  font-size: larger;
+}
+.footer_links li {
+  list-style: none;
+}
+.footer_links li a {
+  text-decoration: none;
+  color: rgb(171, 171, 171);
+  font-size: 20px;
+}
+.para {
+  width: 80%;
+}
+.footer_line {
+  position: relative;
+  margin: auto;
+  margin-top: 150px;
+  border: 1px solid rgb(171, 171, 171);
+  width: 89%;
+}
+.copyright {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: rgb(171, 171, 171);
+}
+@media (max-width: 980px) {
+  
+}
+@media (max-width: 769px) {
+  .footer h3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .para {
+    width: 100%;
+  }
+  .footer p {
+    text-align: center;
+    justify-content: center;
+  }
+  .footer_links {
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 445px) {
+  .footer_line {
+    margin-top: 30px;
+  }
+}
